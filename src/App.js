@@ -10,10 +10,12 @@ const messages = [
 function App() {
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(1);
+  const [stepCounter , setStepCounter] = useState(1);
+  const [count , setCount] = useState(1);
 
   function handleNext() {
     if (step < 3) {
-      setStep(step + 1);
+      setStep((step)=>step+1);
     }
   }
 
@@ -32,8 +34,21 @@ function App() {
             <div className={step >= 2 ? "active" : ""}>2</div>
             <div className={step >= 3 ? "active" : ""}>3</div>
           </div>
+            
 
           <Message content={`Step is : ${messages[step - 1]}`} />
+
+          <div>
+            <button onClick={()=>setStepCounter((s)=>s-1 )}>-</button>
+            <p>Step{stepCounter}</p>
+            <button onClick={()=>setStepCounter((s)=>s+1)} >+</button>
+          </div>
+          <div>
+            <button onClick={()=>setCount((s)=>s - stepCounter)}>-</button>
+            <p>Counter{count}</p>
+            <button onClick={()=>setCount((s)=>s + stepCounter)} >+</button>
+          </div>
+
 
           <div className="buttons">
             <button
