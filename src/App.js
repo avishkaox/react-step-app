@@ -10,14 +10,19 @@ const messages = [
 
 function App() {
 
-  const [step , setStep] = useState(1);
+  const [step , setStep] = useState(1 );
 
-  // setStep(()=>{
-  //   return step + 1;
-  // });
+  function handleNext(){
+    if(step < 3){
+      setStep( step + 1 )
+    }
+  }
 
-  // const step = 1;
-  // console.log(step);
+  function handlePrevious(){
+      if(step > 1){
+      setStep( step - 1 )
+    }
+  }
  
   return (
     <div className="steps">
@@ -31,10 +36,10 @@ function App() {
 
 
       <div className="buttons">
-        <button style={{ backgroundColor: "#7950f2", color: "#fff" }}>
+        <button onClick={handlePrevious} style={{ backgroundColor: "#7950f2", color: "#fff" }}>
           Previous
         </button>
-        <button  style={{ backgroundColor: "#7950f2", color: "#fff" }}>
+        <button onClick={handleNext}  style={{ backgroundColor: "#7950f2", color: "#fff" }}>
           Next
         </button>
       </div>
