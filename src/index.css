@@ -76,7 +76,8 @@ h3 {
   text-transform: uppercase;
 }
 
-.close {
+.close , 
+.add {
   position: absolute;
   top: 16px;
   right: 16px;
@@ -87,6 +88,7 @@ h3 {
   color: inherit;
 }
 
-.close:hover {
+.close:hover,
+.add:hover {
   color: #7950f2;
 }
